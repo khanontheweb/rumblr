@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_214600) do
     t.string "fname"
     t.string "lname"
     t.string "email"
+    t.string "password"
     t.date "birthday"
   end
 

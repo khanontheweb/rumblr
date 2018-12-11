@@ -15,5 +15,9 @@ class Post < ActiveRecord::Base
 end
 
 get '/' do
-  p 'Hello World'
+  erb :home.erb
+end
+
+post '/users/signup' do
+  user = User.new(params[''])
 end
