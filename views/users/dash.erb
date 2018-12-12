@@ -1,7 +1,15 @@
 <%= erb :nav%>
-<<form action="/articles/new" method="post">
+<form action="/posts/new" method="post">
   <input type="text" name="title" placeholder="A Fancy Title">
   <input type="textarea" name="post-body" placeholder="Exercise your freedom of speech">
-  <<input type="text" name="tags" value="" placeholder="#tags">
+  <input type="text" name="tags" value="" placeholder="#tags">
+  <input type="submit" name="" value="Create Post">
 </form>
 <h1>This is the dash</h1>
+
+<%
+posts = Post.last(2).reverse
+posts.each do |post|
+%>
+<%=post.title%>
+<%end%>

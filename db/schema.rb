@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_214600) do
     t.string "title"
     t.text "body"
     t.text "tags"
+    t.datetime "created_at"
     t.integer "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

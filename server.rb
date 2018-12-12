@@ -1,5 +1,6 @@
 require 'sinatra/activerecord'
 require 'sinatra'
+require 'date'
 
 enable :sessions
 
@@ -22,11 +23,14 @@ get '/' do #CREATE
   end
 end
 
-#ARTICLE STUFF HERE#
-post '/articles/new' do
+#POST STUFF HERE#
+post '/posts/new' do
   user = User.find(session[:user_id]) #find the user that is making the article
-  tags = params['tags'].strip.split("#") #split up the tags into an array # is the delimiter
-  article = user.posts.create(title: params['title'], body: params['body'], tags: tags)
+  tags = params['tags'].gsub(/\s+/,"").split("#") #split up the tags into an array # is the delimiter
+  time = DateTime.now
+  time.strftime("%m/%d/%Y %H:%M")
+  article = user.posts.create(title: params['title'], body: params['body'], tags: tags, created_at: time)
+  redirect '/users/dash'
 end
 
 #USER STUFF HERE#
