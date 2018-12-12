@@ -14,10 +14,20 @@ class Post < ActiveRecord::Base
   belongs_to :author
 end
 
-get '/' do
-  erb :home.erb
+get '/' do #CREATE
+  erb :home
 end
 
-post '/users/signup' do
-  user = User.new(params[''])
+
+
+get '/users/:id' do #READ
+  @user = User.find(params['id'])
+  erb :'/users/profile'
+end
+
+post '/users/signup' do #CREATE
+  @user = User.new(fname: params['fname'], lname: params['lname'], email: params['email'], birthday: params['birthday'], password: params['password'])
+  @user.save
+  session[:user_id] = @user.id
+  redirect "/users/#{@user.id}"
 end
