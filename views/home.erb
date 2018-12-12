@@ -1,13 +1,27 @@
-<form action="/users/signup" method="post">
-  <input type="text" name="fname" placeholder="First Name">
-  <input type="text" name="lname" placeholder="Last Name">
-  <input type="email" name="email" placeholder="john.doe@email.com">
-  <input type="password" name="password" placeholder="Password">
-  <input type="submit" value="Sign Up">
-</form>
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-light navbar-expand-lg ">
+      <a class="navbar-brand" href="/">
+          <img src="/img/logo.png" class="img-fluid d-inline-block align-top" alt="">
+      </a>
+      <form class="form-inline" action="/search" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Rumblr" aria-label="Search">
+      </form>
+    </nav>
+  </div>
+  <div class="row">
+    <form action="/users/signup" method="post">
+      <input type="text" name="fname" placeholder="First Name">
+      <input type="text" name="lname" placeholder="Last Name">
+      <input type="email" name="email" placeholder="john.doe@email.com">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Sign Up">
+    </form>
 
-<form action="/users/login" method="post">
-  <input type="text" name="email" placeholder="Email">
-  <input type="password" name="password" placeholder="Password">
-  <input type="submit" value="Login">
-</form>
+    <form action="/users/login" method="post">
+      <input type="text" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</div>

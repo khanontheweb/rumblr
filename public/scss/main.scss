@@ -1,4 +1,12 @@
+//navbar variables
+$brand_size: 10%;
+
 body {
   margin: 0;
   padding: 0;
+}
+
+//navbar styling
+.navbar-brand {
+  width: $brand_size;
 }

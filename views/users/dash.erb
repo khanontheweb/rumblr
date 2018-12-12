@@ -8,7 +8,7 @@
 <h1>This is the dash</h1>
 
 <%
-posts = Post.last(2).reverse
+posts = Post.last(20).reverse
 posts.each do |post|
 %>
 <%=post.title%>

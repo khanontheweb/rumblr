@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 end
 
 class Post < ActiveRecord::Base
-  serialize :tags
+  serialize :tags,Array
   belongs_to :author
 end
 
@@ -34,15 +34,24 @@ post '/posts/new' do
 end
 
 #USER STUFF HERE#
+
+post '/users/delete' do #delete
+  user = User.find(session[:user_id])
+  user.destroy
+  session[:user_id] = nil
+  redirect '/'
+end
+
 get '/users/dash' do #READ
   @user = User.find(session[:user_id]) #grab the user by checking the value of user id in session hash
   erb :'/users/dash'
 end
 
-get '/users/:id' do #READ
-  @user = User.find(params['id']) #using user id instead of session hash for url purposes
-  erb :'/users/profile'
+post '/users/logout' do #CREATE
+  session[:user_id] = nil
+  redirect '/'
 end
+
 
 post '/users/signup' do #CREATE
   @user = User.new(fname: params['fname'], lname: params['lname'], email: params['email'], birthday: params['birthday'], password: params['password']) #make the user
@@ -61,7 +70,7 @@ post '/users/login' do #CREATE
   end
 end
 
-post '/users/logout' do #CREATE
-  session[:user_id] = nil
-  redirect '/'
+get '/users/:id' do #READ
+  @user = User.find(params['id']) #using user id instead of session hash for url purposes
+  erb :'/users/profile'
 end
