@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 end
 
 class Post < ActiveRecord::Base
-  store :tags
+  serialize :tags
   belongs_to :author
 end
 
@@ -22,6 +22,14 @@ get '/' do #CREATE
   end
 end
 
+#ARTICLE STUFF HERE#
+post '/articles/new' do
+  user = User.find(session[:user_id]) #find the user that is making the article
+  tags = params['tags'].strip.split("#") #split up the tags into an array # is the delimiter
+  article = user.posts.create(title: params['title'], body: params['body'], tags: tags)
+end
+
+#USER STUFF HERE#
 get '/users/dash' do #READ
   @user = User.find(session[:user_id]) #grab the user by checking the value of user id in session hash
   erb :'/users/dash'
