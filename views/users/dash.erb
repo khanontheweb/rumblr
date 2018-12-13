@@ -1,7 +1,7 @@
 <%= erb :nav%>
 <form action="/posts/new" method="post">
   <input type="text" name="title" placeholder="A Fancy Title">
-  <input type="textarea" name="post-body" placeholder="Exercise your freedom of speech">
+  <input type="textarea" name="body" placeholder="Exercise your freedom of speech">
   <input type="text" name="tags" value="" placeholder="#tags">
   <input type="submit" name="" value="Create Post">
 </form>
@@ -10,6 +10,7 @@
 <%
 posts = Post.where(user_id: @user.id).last(20).reverse
 posts.each do |post|
+@postcard = post
 %>
-<%=post.title%>
+<%= erb :'/posts/post_card'%>
 <%end%>
