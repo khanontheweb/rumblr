@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :body
       t.text :tags
       t.datetime :created_at
-      t.belongs_to :user, index: true, foreign_key: true
+      t.belongs_to :user, index: true, foyreign_key: true
     end
   end
 end

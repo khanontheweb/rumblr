@@ -1,12 +1,44 @@
-//navbar variables
-$brand_size: 10%;
+//color pallette
 
-body {
+
+/* RGB */
+$color1: rgba(34, 116, 165, 1);
+$color2: rgba(72, 169, 166, 1);
+$color3: rgba(228, 223, 218, 1);
+$color4: rgba(212, 180, 131, 1);
+$color5: rgba(193, 102, 107, 1);
+$color6: rgba(0,0,0,.4);
+
+
+//navbar variables
+$brand_size: 3%;
+
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  background-color: $color1
 }
 
-//navbar styling
+/* NAVBAR STYLING */
+
+//logo styling
 .navbar-brand {
   width: $brand_size;
+}
+
+//search bar styling
+
+input {
+  &[type="search"] {
+    background-color: $color6;
+  }
+}
+
+#search::placeholder {
+  color: $color3;
+}
+
+#search:focus {
+  color: black;
 }
