@@ -39,4 +39,12 @@ input[type=search] {
   background-color: #e4dfda;
 }
 
+/* CARD STYLING */
+.card {
+  min-height: 20vh;
+}
+.card .card-header {
+  background-color: white !important;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -7,10 +7,12 @@
 </form>
 <h1>This is the dash</h1>
 
-<%
-posts = Post.where(user_id: @user.id).last(20).reverse
-posts.each do |post|
-@postcard = post
-%>
-<%= erb :'/posts/post_card'%>
-<%end%>
+<div class="container-fluid">
+  <%
+  posts = Post.where(user_id: @user.id).last(20).reverse
+  posts.each do |post|
+  @postcard = post
+  %>
+  <%= erb :'/posts/post_card'%>
+  <%end%>
+</div>

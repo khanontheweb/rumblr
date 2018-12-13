@@ -69,3 +69,13 @@ input {
 .horizontal-rule {
   background-color: $color3;
 }
+
+/* CARD STYLING */
+
+.card {
+  min-height: 20vh;
+
+  .card-header {
+    background-color: white !important;
+  }
+}
