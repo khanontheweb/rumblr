@@ -14,7 +14,7 @@ end
 class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
 end
-
+#retry
 class Post < ActiveRecord::Base
   serialize :tags,Array
   belongs_to :author
