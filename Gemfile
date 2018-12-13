@@ -3,7 +3,7 @@ source "https://rubygems.org" do
   gem "sinatra-activerecord"
   gem "rake"
 
-  group :deveolopment do
+  group :development do
     gem "sqlite3"
   end
 
