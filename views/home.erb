@@ -9,20 +9,53 @@
   </form>
 </nav>
 
-<div class="container">
-  <div class="row">
-    <form action="/users/signup" method="post">
-      <input type="text" name="fname" placeholder="First Name">
-      <input type="text" name="lname" placeholder="Last Name">
-      <input type="email" name="email" placeholder="john.doe@email.com">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit" value="Sign Up">
-    </form>
+<div class="container h-100">
+  <div class="row h-75 align-items-center">
+    <div class="d-flex flex-column w-100">
+      <div class="sign-up-collapse collapse" id="sign-up-toggle-content">
+        <form action="/users/signup" method="post">
+          <div class="form-row">
+            <div class="col mr-0 mb-1"">
+              <input class="form-control type="text" name="fname" placeholder="First Name">
+            </div>
+            <div class="col mr-0 mb-1">
+              <input class="form-control " type="text" name="lname" placeholder="Last Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col mb-1">
+              <input class="form-control" type="email" name="email" placeholder="john.doe@email.com">
+            </div>
+            <div class="col mb-1">
+              <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-block btn-lg">Start the Rumbl</button>
+        </form>
+      </div>
+      <div class="sign-in-collapse collapse" id="sign-in-toggle-content">
+        <form action="/users/login" method="post">
+          <input class="form-control" type="text" name="email" placeholder="Email">
+          <input class="form-control" type="password" name="password" placeholder="Password">
+          <input class="form-control" type="submit" value="Login">
+        </form>
+      </div>
+      <button data-toggle="collapse" data-target=".sign-up-collapse" id="sign-up-button" type="button" class="sign-up-collapse collapse show btn btn-lg btn-block">
+        Sign Up
+      </button>
+      <button data-toggle="collapse" data-target="#sign-in-toggle-content" id="sign-in-button" type="button" class="collapse show btn btn-lg btn-block">
+        Sign In
+      </button>
+    </div>
 
-    <form action="/users/login" method="post">
-      <input type="text" name="email" placeholder="Email">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit" value="Login">
-    </form>
   </div>
-</div>
+</div> <!-- container end-->
+
+
+
+<!--
+  <div class="row">
+
+
+
+  </div>-->
