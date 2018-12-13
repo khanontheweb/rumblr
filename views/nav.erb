@@ -1,3 +1,19 @@
+<nav class="navbar navbar-light navbar-expand-lg ">
+  <a class="navbar-brand ml-2" href="/">
+      <img src="/img/logo.png" class="img-fluid d-inline-block align-top" alt="">
+  </a>
+  <form class="w-50" action="/search" method="post">
+    <div  class="form-group mb-0">
+      <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search Rumblr" aria-label="Search">
+    </div>
+  </form>
+  <div class="navbar-nav ml-auto mr-2">
+    <a href="/" class="nav-item nav-link"><i class="fas fa-home"></i></a>
+    <a href="" class="nav-item nav-link"><i class="fas fa-user"></i></a>
+    <a href="" class="nav-item nav-link"><i class="fas fa-sticky-note"></i></a>
+  </div>
+</nav>
+<hr class="horizontal-rule">
 <nav>
   <a href="/users/<%=@user.id%>">this your profile b</a>
   <form action="/users/logout" method="post">

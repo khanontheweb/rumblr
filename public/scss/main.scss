@@ -1,5 +1,11 @@
 //color pallette
 
+/* HSL */
+$hcolor1: hsla(202%, 66%, 39%, 1);
+$hcolor2: hsla(178%, 50%, 47%, 1);
+$hcolor3: hsla(30%, 16%, 87%, 1);
+$hcolor4: hsla(36%, 49%, 67%, 1);
+$hcolor5: hsla(357%, 42%, 58%, 1);
 
 /* RGB */
 $color1: rgba(34, 116, 165, 1);
@@ -9,7 +15,8 @@ $color4: rgba(212, 180, 131, 1);
 $color5: rgba(193, 102, 107, 1);
 $color6: rgba(0,0,0,.4);
 
-
+//icon variables
+$icon-size: 2em;
 
 //navbar variables
 $brand_size: 3%;
@@ -44,4 +51,21 @@ input {
 
 #search:focus {
   color: black;
+}
+
+/* ICON STYLING */
+
+.fas {
+  color: $color3;
+  font-size: $icon-size
+}
+
+.fas.fa-sticky-note {
+  color: $color4;
+}
+
+/* HORIZONTAL RULE STYLING */
+
+.horizontal-rule {
+  background-color: $color3;
 }
