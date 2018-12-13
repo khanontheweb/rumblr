@@ -4,7 +4,11 @@ require 'date'
 
 enable :sessions
 
-set :database, {adapter: 'sqlite3', database: 'database.sqlite3'}
+if ENV['RACK_ENV'] == 'development'
+  #connect database to the sqlite3 file during development
+  set :database, {adapter: 'sqlite3', database: 'database.sqlite3'}
+else
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL']) #if production we using heroku database
 
 class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
