@@ -14,10 +14,17 @@ posts.each do |post|
         <p class="card-text card-body-text"><%=@postcard.body%></p>
       </div>
       <div class="card-footer">
-        <p class="card-text card-tags text-muted">
-          <% (@postcard.tags).each do |tag|%>
-          <%= tag %>
-          <%end%>
+        <p class="card-text">
+          <div class="form-group row">
+            <% (@postcard.tags).each do |tag|%>
+              <form action="/posts/<%=tag%>" method="get">
+                  <input type="hidden" name="tag" value="<%=tag%>">
+                  <input type="hidden" name="user" value="<%=@user.id%>">
+                  <button class="text-muted tag-button" type="submit"><%=tag%> </button>
+              </form>
+              <%end%>
+          </div>
+
         </p>
       </div>
     </div>

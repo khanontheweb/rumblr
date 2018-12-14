@@ -41,6 +41,12 @@ post '/posts/new' do
   redirect '/users/dash'
 end
 
+get '/posts/' do
+  @user = User.find(params['user'])
+  @tag = params['tag']
+  erb :'/posts/tags'
+end
+
 #USER STUFF HERE#
 
 post '/users/delete' do #delete
@@ -49,6 +55,8 @@ post '/users/delete' do #delete
   session[:user_id] = nil
   redirect '/'
 end
+
+
 
 get '/users/dash' do #READ
   @user = User.find(session[:user_id]) #grab the user by checking the value of user id in session hash

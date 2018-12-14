@@ -1,0 +1,21 @@
+<%= erb :nav%>
+
+<div class="container">
+  <div class="card-columns">
+    <%
+    posts = Post.where(user_id: @user.id).last(20).reverse
+    posts.each do |post|
+    @postcard = post
+    %>
+      <div class="card border border-dark rounded">
+        <div class="card-header font-weight-bold">
+          <%="#{@user.fname} #{@user.lname}"%>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title mb-0"><%=@postcard.title%></h2>
+          <p class="card-text"><%=@postcard.body%></p>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

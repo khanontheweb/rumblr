@@ -1,0 +1,39 @@
+<%= erb :nav%>
+
+<div class="container">
+  <div class="card-columns">
+    <%
+    posts = Post.all
+    posts.each do |post|
+    if post.tags.include?(@tag)
+    %>
+        <div class="card border border-dark rounded">
+          <div class="card-header font-weight-bold">
+            <%
+              @postcard = post
+              user = User.find(@postcard.user_id)
+            %>
+            <%="#{user.fname} #{user.lname}"%>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title mb-0"><%=@postcard.title%></h2>
+            <p class="card-text"><%=@postcard.body%></p>
+          </div>
+          <div class="card-footer">
+            <p class="card-text">
+              <% (@postcard.tags).each do |tag|%>
+                <form action="/posts/<%=tag%>" method="get">
+
+                    <input type="hidden" name="tag" value="<%=tag%>">
+                    <input type="hidden" name="user" value="<%=@user.id%>">
+                    <button class="text-muted tag-button" type="submit"><%=tag%></button>
+
+                </form>
+                <%end%>
+            </p>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+</div>
