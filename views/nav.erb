@@ -9,7 +9,23 @@
   </form>
   <div class="navbar-nav ml-auto mr-2">
     <a href="/" class="nav-item nav-link"><i class="fas fa-home"></i></a>
-    <a href="" class="nav-item nav-link"><i class="fas fa-user"></i></a>
+    <!-- <a href="#" class="dropdown dropdown-toggle nav-item nav-link" id="user-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    </a> -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <form class="dropdown-item" action="/users/logout" method="post">
+            <button type="submit" class="btn dropdown-item">Logout</button>
+          </form>
+          <div class="dropdown-divider"></div>
+          <form class="dropdown-item" action="/users/delete" method="post">
+            <button type="submit" class="btn dropdown-item">Delete Account</button>
+          </form>
+        </div>
+      </li>
     <a href="" class="nav-item nav-link"><i class="fas fa-sticky-note"></i></a>
   </div>
 </nav>
