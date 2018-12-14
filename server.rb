@@ -31,10 +31,13 @@ end
 #POST STUFF HERE#
 post '/posts/new' do
   user = User.find(session[:user_id]) #find the user that is making the article
-  tags = params['tags'].gsub(/\s+/,"").split("#") #split up the tags into an array # is the delimiter
+  puts params['tags'].split(" ")
+  # tags = params['tags'].gsub(/\s+/,"").split("#") #split up the tags into an array # is the delimiter
+  # tags.reject! {|tag| tag.empty?}
+  # puts tags
   time = DateTime.now
   time.strftime("%m/%d/%Y %H:%M")
-  article = user.posts.create(title: params['title'], body: params['body'], tags: tags, created_at: time)
+  article = user.posts.create(title: params['title'], body: params['body'], tags: params['tags'].split(" "), created_at: time)
   redirect '/users/dash'
 end
 
@@ -78,4 +81,10 @@ end
 get '/users/:id' do #READ
   @user = User.find(params['id']) #using user id instead of session hash for url purposes
   erb :'/users/profile'
+end
+
+# SEARCH STUFF HERE
+post '/search' do
+  @user = User.find_by(fname: params['user'])
+  erb :'/users/search'
 end

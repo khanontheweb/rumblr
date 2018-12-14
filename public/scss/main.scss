@@ -75,9 +75,19 @@ input {
 .card {
   min-height: 20vh;
 
-  .card-header {
+  .card-header, .card-footer {
     background-color: white !important;
   }
+
+  .card-title {
+    min-height: 26%;
+  }
+
+  .card-body-text {
+    min-height: 17%;
+  }
+
+
 }
 
 /* SUBMIT POST STYLING */

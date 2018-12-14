@@ -43,8 +43,14 @@ input[type=search] {
 .card {
   min-height: 20vh;
 }
-.card .card-header {
+.card .card-header, .card .card-footer {
   background-color: white !important;
+}
+.card .card-title {
+  min-height: 26%;
+}
+.card .card-body-text {
+  min-height: 17%;
 }
 
 /* SUBMIT POST STYLING */
