@@ -13,7 +13,7 @@
               @postcard = post
               user = User.find(@postcard.user_id)
             %>
-            <%="#{user.fname} #{user.lname}"%>
+            <a href="/users/#{user.id}>"<%="#{user.fname} #{user.lname}"%></a>
           </div>
           <div class="card-body">
             <h2 class="card-title mb-0"><%=@postcard.title%></h2>
