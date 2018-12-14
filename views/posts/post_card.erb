@@ -7,7 +7,7 @@ posts.each do |post|
   <div class="col-sm-6 mx-auto mb-4">
     <div class="card border border-dark rounded">
       <div class="card-header font-weight-bold">
-        <a href="/users/#{@user.id}"><%="#{@user.fname} #{@user.lname}"%></a>
+        <a class="text-body" href="/users/<%=@user.id%>"><%="#{@user.fname} #{@user.lname}"%></a>
       </div>
       <div class="card-body">
         <h2 class="card-title mb-0"><%=@postcard.title%></h2>
