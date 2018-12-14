@@ -47,4 +47,9 @@ input[type=search] {
   background-color: white !important;
 }
 
+/* SUBMIT POST STYLING */
+#post-tabs .nav-item {
+  width: 13%;
+}
+
 /*# sourceMappingURL=main.css.map */

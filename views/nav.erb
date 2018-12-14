@@ -17,10 +17,18 @@
           <i class="fas fa-user"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <form class="dropdown-item" action="/users/<%=@user.id%>" method="get">
+            <button type="submit" class="btn dropdown-item">View Profile</button>
+          </form>
+
+          <div class="dropdown-divider"></div>
+
           <form class="dropdown-item" action="/users/logout" method="post">
             <button type="submit" class="btn dropdown-item">Logout</button>
           </form>
+          
           <div class="dropdown-divider"></div>
+
           <form class="dropdown-item" action="/users/delete" method="post">
             <button type="submit" class="btn dropdown-item">Delete Account</button>
           </form>

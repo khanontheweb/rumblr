@@ -1,13 +1,50 @@
 <%= erb :nav%>
-<form action="/posts/new" method="post">
+<!-- <form action="/posts/new" method="post">
   <input type="text" name="title" placeholder="A Fancy Title">
   <input type="textarea" name="body" placeholder="Exercise your freedom of speech">
   <input type="text" name="tags" value="" placeholder="#tags">
   <input type="submit" name="" value="Create Post">
-</form>
-<h1>This is the dash</h1>
+</form> -->
 
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 mx-auto mb-4">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" id="post-tabs">
+            <li class="nav-item text-center">
+              <a href="#text" class="nav-link active" id="text-tab" data-toggle="tab" role="tab" aria-controls="text" aria-selected="true">
+                <i class="fas fa-font"></i>
+                <p class="mb-0">Text</p>
+              </a>
+            </li>
+            <li class="nav-item text-center">
+              <a href="#picture" class="nav-link" id="picture-tab" data-toggle="tab" role="tab" aria-controls="picture" aria-selected="false">
+                <i class="fas fa-camera"></i>
+                <p class="mb-0">Picture</p>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="post-tab-content">
+            <div class="tab-pane fade show active" id="text" role="tabpanel" aria-labelledby="text-tab">
+              <form action="/posts/new" method="post">
+                <input class="border-0 form-control" type="text" name="title" placeholder="Title">
+                <textarea class="border-0 form-control" name="body" placeholder="Exercise your freedom of speech"></textarea>
+                <input class="border-0 form-control" type="text" name="tags" value="" placeholder="#tags">
+                <input type="submit" name="" value="Create Post">
+              </form>
+            </div>
+            <div class="tab-pane fade show" id="picture" role="tabpanel" aria-labelledby="picture-tab">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <%
   posts = Post.where(user_id: @user.id).last(20).reverse
   posts.each do |post|

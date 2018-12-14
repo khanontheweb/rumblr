@@ -1,4 +1,17 @@
-<%= "#{@user.fname} #{@user.lname}"%>
-<form class="" action="/users/delete" method="post">
-  <input type="submit" value="DELETE THIS">
-</form>
+<%= erb :nav%>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 mx-auto mb-4">
+      <div class="card border border-dark rounded">
+        <div class="card-header font-weight-bold">
+          <%="#{@user.fname} #{@user.lname}'s Info'"%>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title mb-0">Email: <%=@user.email%></h2>
+          <p class="card-title mb-0">Birthday: <%=@user.birthday%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
